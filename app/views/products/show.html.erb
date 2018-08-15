@@ -4,19 +4,7 @@
 <h4>Description: <%= @product.description %></h4>
 <h5>Price in dollas: <%= @product.price_in_dollars %></h5>
 
-<h3>Reviews</h3>
-<% if @product.reviews.empty? %>
-  <h4>There are currently no reviews</h4>
-  <% else %>
-    <% @product.reviews.each do |review| %>
-      <ul>
-        <li>Comment: <%= review.comment %></li>
-        <li>Created at: <%= review.created_at %></li>
-        <li>Last updated at: <%= review.updated_at %></li>
-        <li><%= link_to 'Edit', edit_product_review_path(@product, review) %></li>
-      </ul>
-    <% end %>
-<% end %>
+<%= render 'reviews', product: @product%>
 
 <h4>New Review</h4>
 
