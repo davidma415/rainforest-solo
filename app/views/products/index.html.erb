@@ -1,0 +1,13 @@
+<h1>Products</h1>
+
+<% @products.each do |product| %>
+   <div class="product">
+    <%= link_to 'Show Product', product_path(product) %>
+    <ul>
+      <li>Product name: <%= product.name %></li>
+      <li>Product description: <%= product.description %></li>
+      <li>Product price in dollas: <%= product.price_in_dollars %></li>
+    </ul>
+
+  </div>
+<% end %>
