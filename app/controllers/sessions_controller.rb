@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to products_url, notice: "Logged in!"
     else
+      flash[:notice] = "Incorrect info, try again"
       render :new
     end
   end

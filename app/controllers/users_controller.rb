@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "User has been registered."
-      redirect_to products_path
+      redirect_to products_url
     else
       flash[:notice] = "User was not saved. Please try again."
       render :new

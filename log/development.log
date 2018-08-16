@@ -4162,3 +4162,308 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:00:27 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 474ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_session_path' for #<#<Class:0x00007fb63cc5f400>:0x00007fb63cc46720>
+Did you mean?  new_sessions_path):
+    17:           <% if current_user %>
+    18:             Signed in as <%= current_user.email %> | <%= link_to 'Log Out', session_path("current"), :method => :delete %>
+    19:           <% else %>
+    20:             <%= link_to 'Login', new_session_path %> or <%= link_to 'Register', new_user_path %>
+    21:           <% end %>
+    22:         </span>
+    23:       </nav>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___3169022940790946415_70210342988960'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:00:50 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 298ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007fb63cc5f400>:0x00007fb6410a8e90>
+Did you mean?  new_users_path):
+    17:           <% if current_user %>
+    18:             Signed in as <%= current_user.email %> | <%= link_to 'Log Out', session_path("current"), :method => :delete %>
+    19:           <% else %>
+    20:             <%= link_to 'Login', new_sessions_path %> or <%= link_to 'Register', new_user_path %>
+    21:           <% end %>
+    22:         </span>
+    23:       </nav>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___3169022940790946415_70210375926920'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:00:57 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-08-16 12:01:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"onZUh3Mt60imJU3IxX8LMSVh0Lp+SzYlMZE6XT6lGbNACYcH2bZgpBhXEjyeYIdjIPxAu/km2ITpuwrDCZxN4w==", "session"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:01:27 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 35ms (Views: 28.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:01:28 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-08-16 12:01:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vp7s+spj+2NyalZy6tiK6xhNt8yTmclXcvh5giuyK0zAqhykiWepBXtQxFiAeYF80wdJAw6wIUPCe9p904jLcA==", "session"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-08-16 12:01:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L3wCR2oORfVJFRJxvwmMRjD2b2B4ZGok3t94n1N/8n3NA9HHwJXOGfdnTYXkFgAUNWv/Yf8JhIUG9UgBZEamLQ==", "session"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-16 12:02:22 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-16 12:02:27 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hQ2YU5MxyBB4KVgYXDLTp9X3JXXfOgnI1qMWUybU8Fqjls4jxjqfofbyxiCkNMOUMTkKs1d9NKdxkSG6r0mGfA==", "user"=>{"email"=>"david@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "david@gmail.com"], ["password_digest", "$2a$10$L8sYcARXREj819ts57dhgO3oa8Du90yUh7ahxvnnBgXr3dSGkFioa"], ["created_at", "2018-08-16 16:02:27.422359"], ["updated_at", "2018-08-16 16:02:27.422359"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13
+Redirected to http://localhost:3000/products
+Completed 302 Found in 63ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:02:27 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 67ms (Views: 62.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:02:29 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-08-16 12:02:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eOy6RdJ7byLvkoJ9Ny6jeGigfoRocmITmcqRFipqiinu2EobkX89ROaoEFddj6jvo+qAS/VbigcpSTLp0lBqFQ==", "session"=>{"email"=>"david@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "david@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/products
+Completed 302 Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:02:33 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for #<#<Class:0x00007fb63de3e4c8>:0x00007fb64140ad40>
+Did you mean?  sessions_path):
+    15:         <%= link_to 'Home', products_path %> | <%= link_to 'New Product', new_product_url %> |
+    16:         <span class="userinfo">
+    17:           <% if current_user %>
+    18:             Signed in as <%= current_user.email %> | <%= link_to 'Log Out', session_path("current"), :method => :delete %>
+    19:           <% else %>
+    20:             <%= link_to 'Login', new_sessions_path %> or <%= link_to 'Register', new_users_path %>
+    21:           <% end %>
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___3169022940790946415_70210377751620'
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:02:53 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `session_paths' for #<#<Class:0x00007fb63de3e4c8>:0x00007fb642a02918>
+Did you mean?  sessions_path):
+    15:         <%= link_to 'Home', products_path %> | <%= link_to 'New Product', new_product_url %> |
+    16:         <span class="userinfo">
+    17:           <% if current_user %>
+    18:             Signed in as <%= current_user.email %> | <%= link_to 'Log Out', session_paths("current"), :method => :delete %>
+    19:           <% else %>
+    20:             <%= link_to 'Login', new_sessions_path %> or <%= link_to 'Register', new_users_path %>
+    21:           <% end %>
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___3169022940790946415_70210389268200'
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:03:02 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions.current" for 127.0.0.1 at 2018-08-16 12:03:04 -0400
+Processing by SessionsController#destroy as 
+  Parameters: {"authenticity_token"=>"g1nzjNRB2Ro8LuGyiH15LACfbTDZDJR7c04hAJvKdyxhJiAMftpS9oJcvkbTYvV+BQL9MV5hetqrZBGerPMjfA=="}
+Redirected to http://localhost:3000/products
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:03:04 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:03:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-08-16 12:03:12 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F4U6YyLs1WfcVPRwaMkH5s228qqOfqQDg5Y1mCeq7fSBsco9YeiHAdVuZloCaAxxBvwMZRNXTBczFZZn35ANyA==", "session"=>{"email"=>"t@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "t@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:03:56 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-08-16 12:03:57 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_errormsg.html.erb (0.6ms)
+  Rendered products/_form.html.erb (24.0ms)
+  Rendered products/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:03:58 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-08-16 12:03:58 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_errormsg.html.erb (1.0ms)
+  Rendered products/_form.html.erb (2.9ms)
+  Rendered products/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:04:00 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-16 12:04:00 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-08-16 12:04:01 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-08-16 12:04:02 -0400
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_errormsg.html.erb (0.5ms)
+  Rendered products/_form.html.erb (8.5ms)
+  Rendered products/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-08-16 12:04:03 -0400
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:3
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
