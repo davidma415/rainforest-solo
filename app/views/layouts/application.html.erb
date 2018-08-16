@@ -12,7 +12,7 @@
   <body>
     <% unless controller_name == "pages" %>
       <nav>
-        <%= link_to 'Home', products_url %> | <%= link_to 'New Product', new_product_url %> |
+        <%= link_to 'Home', products_path %> | <%= link_to 'New Product', new_product_url %> |
         <span class="userinfo">
           <% if current_user %>
             Signed in as <%= current_user.email %> | <%= link_to 'Log Out', session_path("current"), :method => :delete %>
