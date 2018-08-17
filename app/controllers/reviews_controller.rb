@@ -1,9 +1,14 @@
 class ReviewsController < ApplicationController
+  before_action :ensure_logged_in, except: [:show, :index]
+  before_action :load_review, only: [:edit, :update, :destroy]
+  before_action :load_product, only: [:create, :edit, :update, :destroy]
+  before_action :ensure_user_owns_review, only: [:edit, :update, :destroy]
+
   def create
     @review = Review.new
-    @product = Product.find(params[:product_id])
     @review.comment = params[:review][:comment]
     @review.product_id = params[:product_id]
+    @review.user_id = current_user.id
 
     if @review.save
       flash[:notice] = "Your review was saved."
@@ -15,13 +20,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
-    @product = Product.find(params[:product_id])
   end
 
   def update
-    @review = Review.find(params[:id])
-    @product = Product.find(params[:product_id])
     @review.comment = params[:review][:comment]
     if @review.save
       flash[:notice] = "Your review has been updated"
@@ -32,10 +33,23 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
-    @product = Product.find(params[:product_id])
     @review.destroy
     flash[:notice] = "Your review has been successfully deleted"
     redirect_to product_url(@product)
+  end
+
+  def load_review
+    @review = Review.find(params[:id])
+  end
+
+  def load_product
+    @product = Product.find(params[:product_id])
+  end
+
+  def ensure_user_owns_review
+    unless current_user = @review.user
+      flash[:alert] = "You did not write this review, please login as the correct user"
+      redirect_to new_sessions_url
+    end
   end
 end
